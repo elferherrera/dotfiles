@@ -1,0 +1,3 @@
+nushell/*.sqlite3*
+nushell/history.txt
+
