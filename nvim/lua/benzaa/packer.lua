@@ -42,6 +42,16 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim' -- Fancier statusline
     use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
 
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+    use 'ggandor/leap.nvim'
+
 end)
-
-

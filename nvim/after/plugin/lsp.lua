@@ -8,6 +8,16 @@ lsp.ensure_installed({
     'pylsp',
 })
 
+-- Uncomment these lines if you want to use local version of suggest_lsp_servers
+-- Also remove them from `ensure_installed`
+-- lsp.configure('rust_analyzer', {
+--     force_setup = true
+-- })
+--
+-- lsp.configure('pylsp', {
+--     force_setup = true
+-- })
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
