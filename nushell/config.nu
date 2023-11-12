@@ -59,14 +59,8 @@ let default_theme = {
     shape_nothing: light_cyan
 }
 
-let external_completer = {|spans|
-  {
-    $spans.0: {carapace $spans.0 nushell $spans | from json } # default
-  } | get $spans.0 | each {|it| do $it}
-}
-
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
@@ -98,7 +92,7 @@ let-env config = {
     algorithm: "prefix"  # prefix or fuzzy
     external: {
       enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
-      max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
+      max_results: 20 # setting it lower can improve completion performance at the cost of omitting some options
       completer: {|spans|
         carapace $spans.0 nushell $spans | from json
       }
@@ -122,17 +116,17 @@ let-env config = {
   keybindings: $my_keybindings
 
   hooks: {
-    pre_prompt: [{
-      # $nothing  # replace with source code to run before the prompt is shown
+    pre_prompt: [{||
+      # null  # replace with source code to run before the prompt is shown
       # tabline-hook
-      $nothing  # replace with source code to run before the repl input is run
+      null  # replace with source code to run before the repl input is run
     }]
-    pre_execution: [{
-      $nothing  # replace with source code to run before the repl input is run
+    pre_execution: [{||
+      null  # replace with source code to run before the repl input is run
     }]
     env_change: {
       PWD: [{|before, after|
-        $nothing  # replace with source code to run if the PWD environment is different since the last repl input
+        null  # replace with source code to run if the PWD environment is different since the last repl input
       }]
     }
   }
