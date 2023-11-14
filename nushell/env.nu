@@ -76,4 +76,4 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.config-path | path dirname | path join 'plugins')
 ]
 
-$env.EDITOR = "nvim"
+$env.EDITOR = "/usr/local/bin/nvim"
