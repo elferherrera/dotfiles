@@ -82,7 +82,7 @@ let my_keybindings =  [
   {
     name: todo_list
     modifier: control
-    keycode: char_j
+    keycode: char_m
     mode: [vi_normal, vi_insert]
     event: [ 
       { send: ExecuteHostCommand cmd: "vim ~/Documents/todo.txt" }

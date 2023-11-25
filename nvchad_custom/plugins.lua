@@ -6,15 +6,24 @@ local plugins = {
         "black",
         "ruff",
         "pyright",
+        "rust-analyzer",
       },
     },
   },
   {
     "neovim/nvim-lspconfig",
+    ft = {"python", "rust"},
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = {"rust"},
+    --config = function()
+    --  vim.opt.shell = '/bin/bash'
+    --end
   },
   {
     "nvimtools/none-ls.nvim",
@@ -26,9 +35,6 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     lazy = false,
-    config = function ()
-      vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-    end
   },
   {
     'ggandor/leap.nvim',
@@ -41,9 +47,6 @@ local plugins = {
     "folke/trouble.nvim",
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function ()
-      require "custom.configs.trouble"
-    end,
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings

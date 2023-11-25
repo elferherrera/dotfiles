@@ -1,28 +1,29 @@
 # Nushell Environment Config File
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-$env.PATH = (
-  echo $env.PATH
-  | split row (char esep)
-  | prepend '/bin'
-  | prepend '/sbin'
-  | prepend '/usr/bin'
-  | prepend '/usr/sbin'
-  | prepend '/usr/local/bin'
-  | prepend $'($env.HOME)/bin/google-cloud-sdk/bin'
-  | prepend $'($env.HOME)/.cargo/bin'
-  | prepend $'($env.HOME)/go/bin'
-  | prepend $'($env.HOME)/bin/go/bin'
-  | prepend $'($env.HOME)/bin/trino'
-  # | prepend $'($env.HOME)/bin/hadoop-3.3.3/bin'
-  # | prepend $'($env.HOME)/bin/apache-hive-3.1.3-bin/bin'
-  | prepend $'($env.HOME)/.kube/plugins/jordanwilson230'
-  | prepend $'($env.HOME)/Library/Application Support/Coursier/bin'
-  | prepend $'($env.HOME)/.local/bin'
-  | prepend $'($env.HOME)/.cabal/bin'
-  | prepend $'($env.HOME)/.ghcup/bin'
-  | prepend $'($env.HOME)/.pyenv/bin'
-)
+$env.PATH = [
+  "/bin"
+  "/sbin"
+  "/usr/bin"
+  "/usr/sbin"
+  "/usr/local/bin"
+  "/opt/homebrew/bin"
+  "/opt/homebrew/sbin"
+  $"($env.HOME)/.cargo/bin"
+  $"($env.HOME)/.local/bin"
+  $"($env.HOME)/.cabal/bin"
+  $"($env.HOME)/.ghcup/bin"
+  $"($env.HOME)/.pyenv/bin"
+  $"($env.HOME)/.kube/plugins/jordanwilson230"
+  $"($env.HOME)/bin/google-cloud-sdk/bin"
+]
+
+# Homebrew configuration for MacOS
+# envs set by /opt/homebrew/bin shellenv
+$env.HOMEBREW_PREFIX = "/opt/homebrew"
+$env.HOMEBREW_CELLAR = "/opt/homebrew/Cellar"
+$env.HOMEBREW_REPOSITORY = "/opt/homebrew"
+$env.MANPATH = "/opt/homebrew/share/man"
+$env.INFOPATH = "/opt/homebrew/share/info"
 
 $env.PYENV_ROOT = $'($env.HOME)/.pyenv'
 
@@ -76,4 +77,4 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.config-path | path dirname | path join 'plugins')
 ]
 
-$env.EDITOR = "/usr/local/bin/nvim"
+$env.EDITOR = "/opt/homebrew/bin/nvim"

@@ -1,4 +1,4 @@
-export def-env my-env [] { 
+export def --env my-env [] { 
     let values = (
         open .env 
         | lines 
