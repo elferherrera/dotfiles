@@ -5,7 +5,6 @@ local plugins = {
       ensure_installed = {
         "black",
         "ruff",
-        "pyright",
         "rust-analyzer",
       },
     },

@@ -13,6 +13,14 @@ M.fugitive = {
     ["<leader>gc"] = {
       "<cmd> Gvdiffsplit master <CR>",
       "Compare file with master"
+    },
+    ["<leader>ga"] = {
+      [[:G difftool ]],
+      "Get all differences with a specific branch"
+    },
+    ["<leader>gz"] = {
+      [[:G Gvdiffsplit ]],
+      "Compare file with specific branch"
     }
   }
 }
@@ -45,5 +53,19 @@ M.trouble = {
     }
   }
 }
+
+M.rust = {
+  n = {
+    ["<leader>gf"] = {
+      "<cmd> RustFmt <CR>",
+      "Rust format file"
+    },
+    ["<leader>gp"] = {
+      "<cmd> RustRun <CR>",
+      "Rust run code"
+    },
+  }
+}
+
 
 return M
