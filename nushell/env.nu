@@ -61,6 +61,10 @@ $env.ENV_CONVERSIONS = {
     from_string: { |s| $s | split row (char esep) }
     to_string: { |v| $v | str join (char esep) }
   }
+  "PYTHONPATH": {
+    from_string: { |s| $s | split row (char esep) }
+    to_string: { |v| $v | str join (char esep) }
+  }
 }
 
 # Directories to search for scripts when calling source or use
