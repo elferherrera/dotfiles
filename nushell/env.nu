@@ -82,3 +82,5 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 $env.EDITOR = "/opt/homebrew/bin/nvim"
+
+$env.DOCKER_HOST = $"unix:///($env.HOME)/.local/share/containers/podman/machine/qemu/podman.sock"

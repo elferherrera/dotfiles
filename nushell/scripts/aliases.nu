@@ -10,3 +10,5 @@ alias gs = git status
 alias gf = git fetch
 alias gp = git pull --no-ff
 alias gb = git branch
+
+alias lazypodman = lazydocker

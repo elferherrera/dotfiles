@@ -14,8 +14,8 @@ let alias_menu = {
         description_text: yellow
     }
     source: { |buffer, position|
-        $nu.scope.aliases
-        | where alias == $buffer
+        scope aliases
+        | where name == $buffer
         | each { |it| {value: $it.expansion }}
     }
 }

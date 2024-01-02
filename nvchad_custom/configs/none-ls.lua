@@ -1,9 +1,10 @@
 local null_ls = require("null-ls")
 
-local opts = {
-  sources = {
-    null_ls.builtins.diagnostics.ruff,
-    null_ls.builtins.formatting.black,
-  }
+local sources = {
+	null_ls.builtins.formatting.stylua,
 }
-return opts
+
+null_ls.setup({
+	debug = true,
+	sources = sources,
+})
