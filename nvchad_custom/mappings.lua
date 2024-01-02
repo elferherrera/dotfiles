@@ -67,5 +67,14 @@ M.rust = {
   }
 }
 
+M.mine = {
+  n = {
+    ["<leader>s"] = {
+      [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+      "Replace current word"
+    },
+  }
+}
+
 
 return M
