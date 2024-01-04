@@ -15,6 +15,7 @@ $env.PATH = [
   $"($env.HOME)/.pyenv/bin"
   $"($env.HOME)/.kube/plugins/jordanwilson230"
   $"($env.HOME)/bin/google-cloud-sdk/bin"
+  $"($env.HOME)/bin/go/bin"
 ]
 
 # Homebrew configuration for MacOS

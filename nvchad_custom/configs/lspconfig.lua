@@ -1,4 +1,5 @@
 local config = require("plugins.configs.lspconfig")
+local util = require("lspconfig/util")
 
 local on_attach = function(client, bufnr)
 	local utils = require("core.utils")
@@ -6,28 +7,30 @@ local on_attach = function(client, bufnr)
 end
 
 local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({
-	on_attach = on_attach,
-	capabilities = config.capabilities,
-	filetypes = { "python" },
-})
+local servers = {
+	{ "ruff_lsp", "python" },
+	{ "pyright", "python" },
+	{ "gopls", "go" },
+}
 
-lspconfig.ruff_lsp.setup({
-	on_attach = on_attach,
-	capabilities = config.capabilities,
-	filetypes = { "python" },
-})
+for _, vals in ipairs(servers) do
+	local lsp, lang = vals[1], vals[2]
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		capabilities = config.capabilities,
+		filetypes = { lang },
+	})
+end
 
+-- Rust Features are declared in an env variable called RUST_FEATURES
+-- in the project environment
 local function get_rust_features()
 	local rust_env = os.getenv("RUST_FEATURES")
-
 	if rust_env == nil then
 		rust_env = ""
 	end
 	return vim.split(rust_env, " ")
 end
-
-local util = require("lspconfig/util")
 
 lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
