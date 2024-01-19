@@ -21,7 +21,7 @@ let my_keybindings =  [
   {
     name: history_menu
     modifier: control
-    keycode: char_p
+    keycode: char_u
     mode: [vi_normal vi_insert]
     event: {
       until: [
@@ -45,7 +45,7 @@ let my_keybindings =  [
   {
     name: help_menu
     modifier: control
-    keycode: char_u
+    keycode: char_p
     mode: [vi_normal vi_insert]
     event: { send: menu name: help_menu }
   }
@@ -59,7 +59,7 @@ let my_keybindings =  [
   {
     name: alias_menu
     modifier: control
-    keycode: char_y
+    keycode: space
     mode: [vi_normal, vi_insert]
     event: { send: menu name: alias_menu }
   }  
@@ -73,6 +73,15 @@ let my_keybindings =  [
     ]
   }  
   {
+    name: todo_list
+    modifier: control
+    keycode: char_m
+    mode: [vi_normal, vi_insert]
+    event: [ 
+      { send: ExecuteHostCommand cmd: "nvim ~/Documents/todo.txt" }
+    ]
+  }  
+  {
     name: fzf_menu
     modifier: control
     keycode: char_k
@@ -80,12 +89,29 @@ let my_keybindings =  [
     event: { send: menu name: fzf_menu}
   }  
   {
-    name: todo_list
+    name: fuzzy_history_fzf
     modifier: control
-    keycode: char_m
+    keycode: char_l
     mode: [vi_normal, vi_insert]
-    event: [ 
-      { send: ExecuteHostCommand cmd: "vim ~/Documents/todo.txt" }
-    ]
+    event: {
+      send: ExecuteHostCommand
+      cmd: "commandline (
+        history 
+        | get command
+        | uniq
+        | reverse
+        | str join (char -i 0)
+        | fzf --read0 --tiebreak=chunk --layout=reverse --multi --preview='echo {..}' --preview-window='bottom:3:wrap' --height=40% -q (commandline)
+        | decode utf-8
+        | str trim
+      )"
+    }
+  }
+  {
+    name: fzf_var_menu
+    modifier: control
+    keycode: char_j
+    mode: [vi_normal, vi_insert]
+    event: { send: menu name: fzf_var_menu}
   }  
 ]

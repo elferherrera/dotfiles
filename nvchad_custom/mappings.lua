@@ -73,6 +73,34 @@ M.general = {
 			[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 			"Replace current word",
 		},
+		["<C-s-l>"] = {
+			"<cmd> vertical resize +10<CR>",
+			"Resize vertical window +10",
+		},
+		["<C-s-h>"] = {
+			"<cmd> vertical resize -10<CR>",
+			"Resize vertical window -10",
+		},
+		["<C-s-j>"] = {
+			"<cmd> resize +5<CR>",
+			"Resize window +5",
+		},
+		["<C-s-k>"] = {
+			"<cmd> resize -5<CR>",
+			"Resize window -5",
+		},
+		["<C-s-b>"] = {
+			"<cmd> tab new<CR>",
+			"Creates a new tab",
+		},
+		["<C-s-n>"] = {
+			"<cmd> tabp<CR>",
+			"Next tab",
+		},
+		["<C-s-m>"] = {
+			"<cmd> tabn<CR>",
+			"Prev tab",
+		},
 	},
 }
 

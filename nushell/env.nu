@@ -8,14 +8,15 @@ $env.PATH = [
   "/usr/local/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
-  $"($env.HOME)/.cargo/bin"
+  $"($env.HOME)/.ghcup/bin"
   $"($env.HOME)/.local/bin"
   $"($env.HOME)/.cabal/bin"
-  $"($env.HOME)/.ghcup/bin"
+  $"($env.HOME)/.cargo/bin"
   $"($env.HOME)/.pyenv/bin"
-  $"($env.HOME)/.kube/plugins/jordanwilson230"
-  $"($env.HOME)/bin/google-cloud-sdk/bin"
   $"($env.HOME)/bin/go/bin"
+  $"($env.HOME)/go/bin"
+  $"($env.HOME)/bin/google-cloud-sdk/bin"
+  $"($env.HOME)/.kube/plugins/jordanwilson230"
 ]
 
 # Homebrew configuration for MacOS
@@ -83,5 +84,3 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 $env.EDITOR = "/opt/homebrew/bin/nvim"
-
-$env.DOCKER_HOST = $"unix:///($env.HOME)/.local/share/containers/podman/machine/qemu/podman.sock"
