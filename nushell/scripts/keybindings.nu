@@ -101,7 +101,14 @@ let my_keybindings =  [
         | uniq
         | reverse
         | str join (char -i 0)
-        | fzf --read0 --tiebreak=chunk --layout=reverse --multi --preview='echo {..}' --preview-window='bottom:3:wrap' --height=40% -q (commandline)
+        | fzf 
+            --read0 
+            --tiebreak=chunk 
+            --layout=reverse 
+            --multi 
+            --height=40% -q (commandline)
+            --preview='echo {..}' 
+            --preview-window='bottom:3:wrap' 
         | decode utf-8
         | str trim
       )"
@@ -113,5 +120,12 @@ let my_keybindings =  [
     keycode: char_j
     mode: [vi_normal, vi_insert]
     event: { send: menu name: fzf_var_menu}
+  }  
+  {
+    name: fzf_carapace_menu
+    modifier: control
+    keycode: char_h
+    mode: [vi_normal, vi_insert]
+    event: { send: menu name: fzf_carapace_menu }
   }  
 ]

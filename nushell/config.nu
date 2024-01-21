@@ -307,6 +307,7 @@ $env.config = {
         $alias_menu
         $fzf_menu
         $fzf_var_menu
+        $fzf_carapace_menu
     ]
 
     keybindings: $my_keybindings

@@ -13,7 +13,7 @@ alias kgp = kubectl get pods
 alias gc = git checkout
 alias gs = git status
 alias gf = git fetch
-alias gp = git pull --no-ff
+alias gp = git pull origin master --no-rebase
 alias gb = git branch
 
 alias lzp = DOCKER_HOST=$"unix:///($env.HOME)/.local/share/containers/podman/machine/qemu/podman.sock" lazydocker

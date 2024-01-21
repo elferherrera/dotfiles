@@ -72,13 +72,69 @@ let fzf_var_menu =  {
           $env_vars 
           | append $vars
           | str join (char -i 0)
-          | fzf --read0 --tiebreak=chunk --layout=reverse --multi --height=40% 
+          | fzf 
+              --read0 
+              --tiebreak=chunk 
+              --layout=reverse 
+              --multi 
+              --height=40% 
+              --preview-window='right:90:wrap' 
+              --preview='try { 
+                  $env | get ({..} | str replace "$env." "") 
+                } catch { 
+                  {..}
+                }' 
           | decode utf-8
           | str trim
           | lines
         )
         let start = ($buffer | str length) + 1
-                
+
+        $input
+        | each { |v| 
+            {
+                value: ($v | str trim) 
+                span: { start: $start end: $position }
+            } 
+        }
+    }
+}
+
+let fzf_carapace_menu =  {
+    name: fzf_carapace_menu 
+    only_buffer_difference: false
+    marker: "# "
+    type: {
+        layout: columnar
+        columns: 1
+        col_width: 20
+        col_padding: 2
+    }
+    style: {
+        text: green
+        selected_text: green_reverse
+        description_text: yellow
+    }
+    source: { |buffer, position|
+        let spans = $buffer | split row " "
+        let data = carapace $spans.0 nushell ...$spans | from json
+
+        let input = (
+          $data 
+          | get value
+          | str join (char -i 0)
+          | fzf 
+              --read0 
+              --tiebreak=chunk 
+              --layout=reverse 
+              --multi 
+              --height=40% 
+          | decode utf-8
+          | str trim
+          | lines
+        )
+
+        let start = ($buffer | str length) + 1
         $input
         | each { |v| 
             {
