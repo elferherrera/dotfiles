@@ -4,6 +4,7 @@ alias cdv = cd $"($env.HOME)/.config/nvim"
 alias cddp = cd $"($env.HOME)/Documents/playground"
 alias cddd = cd $"($env.HOME)/Documents/projects/devops"
 alias cdda = cd $"($env.HOME)/Documents/projects/data"
+alias cdds = cd $"($env.HOME)/Documents/projects/secrets"
 
 alias k = kubectl
 alias kcg = kubectl config get-contexts
@@ -21,3 +22,6 @@ alias lzp = DOCKER_HOST=$"unix:///($env.HOME)/.local/share/containers/podman/mac
 #alias docker-compose = podman-compose
 
 alias lg = lazygit
+
+alias gcca = gcloud config configurations activate
+alias gccl = gcloud config configurations list

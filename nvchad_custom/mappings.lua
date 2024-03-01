@@ -106,13 +106,18 @@ M.general = {
 
 M.telescope = {
 	n = {
-		["<leader>fc"] = {
-			"<cmd> Telescope neoclip<CR>",
-			"Neovim clip",
-		},
 		["<leader>fv"] = {
 			"<cmd> Telescope macroscope<CR>",
 			"Neovim macros",
+		},
+	},
+}
+
+M.oil = {
+	n = {
+		["<leader>-"] = {
+			"<cmd> Oil<CR>",
+			"Oil file manager",
 		},
 	},
 }

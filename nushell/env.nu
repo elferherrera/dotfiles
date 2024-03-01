@@ -16,7 +16,11 @@ $env.PATH = [
   $"($env.HOME)/bin/go/bin"
   $"($env.HOME)/go/bin"
   $"($env.HOME)/bin/google-cloud-sdk/bin"
+  $"($env.HOME)/bin/poetry/bin"
   $"($env.HOME)/.kube/plugins/jordanwilson230"
+  $"($env.HOME)/Library/Python/3.11/bin"
+  "/Applications/kitty.app/Contents/MacOS/"
+  "/Applications/Espaso.app/Contents/MacOS/"
 ]
 
 # Homebrew configuration for MacOS
