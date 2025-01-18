@@ -36,9 +36,8 @@ let fzf_menu =  {
         description_text: yellow
     }
     source: { |buffer, position|
-        let input = (fzf --no-sort --tac --height=40% --layout=reverse --tiebreak=chunk  | lines)
+        let input = (fzf --no-sort --tac --height=40% --layout=reverse --tiebreak=chunk | lines)
         let start = ($buffer | str length) + 1
-                
         $input
         | each { |v| 
             {

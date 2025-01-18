@@ -59,7 +59,7 @@ let my_keybindings =  [
   {
     name: alias_menu
     modifier: control
-    keycode: space
+    keycode: char_b
     mode: [vi_normal, vi_insert]
     event: { send: menu name: alias_menu }
   }  
@@ -95,20 +95,14 @@ let my_keybindings =  [
     mode: [vi_normal, vi_insert]
     event: {
       send: ExecuteHostCommand
-      cmd: "commandline (
+      cmd: "commandline edit --replace (
         history 
+        | where exit_status == 0
         | get command
         | uniq
         | reverse
         | str join (char -i 0)
-        | fzf 
-            --read0 
-            --tiebreak=chunk 
-            --layout=reverse 
-            --multi 
-            --height=40% -q (commandline)
-            --preview='echo {..}' 
-            --preview-window='bottom:3:wrap' 
+        | fzf --scheme=history --read0 --tiebreak=chunk --layout=reverse --preview='echo {..}' --preview-window='bottom:3:wrap' --bind alt-up:preview-up,alt-down:preview-down --height=70% -q (commandline) --preview='echo {} | nu --stdin -c \'nu-highlight\''
         | decode utf-8
         | str trim
       )"

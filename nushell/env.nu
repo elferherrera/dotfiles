@@ -21,6 +21,7 @@ $env.PATH = [
   $"($env.HOME)/Library/Python/3.11/bin"
   "/Applications/kitty.app/Contents/MacOS/"
   "/Applications/Espaso.app/Contents/MacOS/"
+  "/opt/homebrew/revolut-workstation-toolbox/bin"
 ]
 
 # Homebrew configuration for MacOS
@@ -56,20 +57,16 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 # Note: The conversions happen *after* config.nu is loaded
 $env.ENV_CONVERSIONS = {
   "PATH": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str join (char esep) }
+    from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
   }
   "Path": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str join (char esep) }
-  }
-  "HADOOP_CLASSPATH": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str join (char esep) }
+    from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
   }
   "PYTHONPATH": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str join (char esep) }
+    from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
   }
 }
 
@@ -77,14 +74,18 @@ $env.ENV_CONVERSIONS = {
 #
 # By default, <nushell-config-dir>/scripts is added
 $env.NU_LIB_DIRS = [
-    ($nu.config-path | path dirname | path join 'scripts')
+    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($nu.data-dir | path join 'completions') # default home for nushell completions
 ]
 
 # Directories to search for plugin binaries when calling register
 #
 # By default, <nushell-config-dir>/plugins is added
 $env.NU_PLUGIN_DIRS = [
-    ($nu.config-path | path dirname | path join 'plugins')
+    ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+$env.FZF_DEFAULT_OPTS = "--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+$env.HELIX_RUNTIME = $"($env.HOME)/Documents/repos/helix/runtime"
 $env.EDITOR = "/opt/homebrew/bin/nvim"
+$env.SHELL = $"($env.HOME)/.cargo/bin/nu"
