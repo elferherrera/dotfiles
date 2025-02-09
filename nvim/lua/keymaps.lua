@@ -19,22 +19,22 @@ local normal_mode_keymaps = {
   ['<leader>v'] = { action = '<Cmd>sp<CR>', desc = 'Horizontal split' },
   ['<leader>h'] = { action = '<Cmd>vs<CR>', desc = 'Vertical split' },
 
-  ['<leader>yl'] = { action = '<Cmd>vertical resize -10<CR>', desc = 'Reduce current window vertical size' },
-  ['<leader>yh'] = { action = '<Cmd>vertical resize +10<CR>', desc = 'Increase current window vertical size' },
-  ['<leader>yk'] = { action = '<Cmd>horizontal resize -10<CR>', desc = 'Reduce current window horizontal size' },
-  ['<leader>yj'] = { action = '<Cmd>horizontal resize +10<CR>', desc = 'Increase current window horizontal size' },
+  ['<Up>'] = { action = '<Cmd>resize +5<CR>', desc = 'Increase window height' },
+  ['<Down>'] = { action = '<Cmd>resize -5<CR>', desc = 'Decrease window height' },
+  ['<Left>'] = { action = '<Cmd>vertical resize -5<CR>', desc = 'Decrease window width' },
+  ['<Right>'] = { action = '<Cmd>vertical resize +5<CR>', desc = 'Increase window width' },
 
-  ['<leader>ul'] = { action = '<Cmd>terminal<CR>', desc = 'Open a terminal in the current buffer' },
-  ['<leader>uk'] = { action = '<Cmd>botright new | resize 10 | terminal<CR>', desc = 'Open a terminal in VS Code style' },
+  ['<leader>nl'] = { action = '<Cmd>terminal<CR>', desc = 'Open a terminal in the current buffer' },
+  ['<leader>nk'] = { action = '<Cmd>botright new | resize 10 | terminal<CR>', desc = 'Open a terminal in VS Code style' },
 
-  ['<leader>a'] = { action = 'za', desc = 'Fold the scope under cursor' },
-  ['<leader>r'] = { action = 'zR', desc = 'Expand all folds in the current buffer' },
+  ['<leader>za'] = { action = 'za', desc = 'Fold the scope under cursor' },
+  ['<leader>zr'] = { action = 'zR', desc = 'Expand all folds in the current buffer' },
 
+  ['<leader>tl'] = { action = '<cmd> tabs<CR>', desc = 'New tab' },
+  ['<leader>td'] = { action = '<cmd> tabclose<CR>', desc = 'New tab' },
   ['<leader>tt'] = { action = '<cmd> tab new<CR>', desc = 'New tab' },
   ['<leader>tn'] = { action = '<cmd> tabn<CR>', desc = 'Next tab' },
   ['<leader>tp'] = { action = '<cmd> tabp<CR>', desc = 'Previous tab' },
-  -- ['<leader>tl'] = { action = '<cmd> tabs<CR>', desc = 'List tabs' },
-  -- ['<leader>tl'] = { action = '<cmd> Telescope telescope-tabs list_tabs<CR>', desc = 'List tabs in telescope' },
 
   ['<C-k>'] = { action = '<C-w><C-k>', desc = 'Move focus to the upper window' },
   ['<C-j>'] = { action = '<C-w><C-j>', desc = 'Move focus to the lower window' },
@@ -43,10 +43,13 @@ local normal_mode_keymaps = {
 
   ['<Esc>'] = { action = '<cmd> nohlsearch<CR>', desc = 'Esc to clear selection' },
 
-  ['<leader>ee'] = { action = '<Cmd> copen<CR>', desc = 'Open next quickfix' },
-  ['<leader>er'] = { action = '<Cmd> cclose<CR>', desc = 'Close next quickfix' },
-  ['<leader>ej'] = { action = '<Cmd> cnext<CR>', desc = 'Move to next quickfix file' },
-  ['<leader>ek'] = { action = '<Cmd> cprevious<CR>', desc = 'Move to prev quickfix file' },
+  ['<leader>lq'] = { action = '<Cmd> copen<CR>', desc = 'Open quickfix' },
+  ['<leader>ll'] = { action = '<Cmd> lopen<CR>', desc = 'Open location list' },
+  ['[q'] = { action = '<Cmd> cprev<CR>', desc = 'Previus quickfix' },
+  [']q'] = { action = '<Cmd> cnext<CR>', desc = 'Next quickfix' },
+
+  ['[b'] = { action = '<Cmd> bprev<CR>', desc = 'Previus buffer' },
+  [']b'] = { action = '<Cmd> bnext<CR>', desc = 'Next buffer' },
 
   ['<leader>x'] = { action = '<Cmd> luafile %<CR>', desc = 'Execute current lua file' },
 }

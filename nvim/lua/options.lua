@@ -121,6 +121,10 @@ local options = {
 
   -- the encoding written to a file
   fileencoding = 'utf-8',
+
+  formatoptions = 'jcroqlnt',
+  grepformat = '%f:%l:%c:%m',
+  grepprg = 'rg --vimgrep',
 }
 
 for parameter, value in pairs(options) do

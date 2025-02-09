@@ -86,6 +86,7 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 $env.FZF_DEFAULT_OPTS = "--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
 $env.HELIX_RUNTIME = $"($env.HOME)/Documents/repos/helix/runtime"
 $env.EDITOR = "/opt/homebrew/bin/nvim"
 $env.SHELL = $"($env.HOME)/.cargo/bin/nu"

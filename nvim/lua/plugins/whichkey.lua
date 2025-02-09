@@ -1,7 +1,10 @@
 return {
   'folke/which-key.nvim',
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+  opts_extend = { 'spec' },
   opts = {
+    preset = 'helix',
+    defaults = {},
     icons = {
       -- set icon mappings to true if you have a Nerd Font
       mappings = vim.g.have_nerd_font,
@@ -41,14 +44,16 @@ return {
 
     -- Document existing key chains
     spec = {
-      { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-      { '<leader>d', group = '[D]ocument' },
-      { '<leader>s', group = '[S]earch' },
-      { '<leader>g', group = '[G]it' },
-      { '<leader>t', group = '[T]abs' },
-      { '<leader>y', group = '[Y]Resize' },
-      { '<leader>e', group = '[E]Quickfix' },
-      { '<leader>u', group = '[U]Terminal' },
+      { '<leader>c', group = '[c]ode', mode = { 'n', 'x' } },
+      { '<leader>cg', group = '[c]ode [g]o', mode = { 'n', 'x' } },
+      { '<leader>f', group = '[f]ind' },
+      { '<leader>g', group = '[g]it' },
+      { '<leader>s', group = '[s]earch' },
+      { '<leader>t', group = '[t]abs' },
+      { '<leader>n', group = 'Termi[n]al' },
+      { '<leader>r', group = 'Su[r]round' },
+      { '<leader>z', group = '[z]Fold' },
+      { '<leader>l', group = '[l]ists' },
     },
   },
 }

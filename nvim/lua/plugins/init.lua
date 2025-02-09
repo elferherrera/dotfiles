@@ -36,7 +36,7 @@ if not success then
 end
 
 -- all plugin settings are in this directory
-local location = 'external_plugins.'
+local location = 'plugins.'
 
 lazy.setup({
   change_detection = {
@@ -84,27 +84,28 @@ lazy.setup({
         vim.cmd.hi 'Comment gui=none'
       end,
     },
+    { import = location .. 'oil' },
+    { import = location .. 'lsp' },
     { import = location .. 'treesitter' },
     { import = location .. 'whichkey' },
     { import = location .. 'gitsigns' },
-    { import = location .. 'luafzf' },
     { import = location .. 'lazydev' },
     { import = location .. 'mini' },
-    { import = location .. 'oil' },
     { import = location .. 'flash' },
+    { import = location .. 'blink' },
     { import = location .. 'gitlinker' },
+    { import = location .. 'go' },
+    { import = location .. 'autopairs' },
+    { import = location .. 'conform' },
     { import = location .. 'rest' },
     { import = location .. 'markdown' },
     { import = location .. 'todo-comments' },
-    { import = location .. 'autopairs' },
-    { import = location .. 'conform' },
-    { import = location .. 'go' },
-    { import = location .. 'lsp' },
-    { import = location .. 'blink' },
+    { import = location .. 'snacks' },
     --
     -- { import = location .. 'cmp' },
     -- { import = location .. 'telescope' },
     -- { import = location .. 'fugitive' },
+    -- { import = location .. 'luafzf' },
   },
 }, {
   ui = {

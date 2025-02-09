@@ -2,6 +2,7 @@ return {
   'saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
   dependencies = 'rafamadriz/friendly-snippets',
+  event = 'InsertEnter',
 
   -- use a release tag to download pre-built binaries
   version = '*',
@@ -36,11 +37,27 @@ return {
     },
     signature = { enabled = true },
     completion = {
+      accept = {
+        -- experimental auto-brackets support
+        auto_brackets = {
+          enabled = true,
+        },
+      },
       menu = {
         auto_show = true,
+        draw = {
+          treesitter = { 'lsp' },
+        },
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 200,
+      },
+      ghost_text = {
+        enabled = vim.g.ai_cmp,
       },
       trigger = {
-        show_on_trigger_character = false,
+        show_on_trigger_character = true,
       },
     },
   },

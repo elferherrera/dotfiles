@@ -11,15 +11,16 @@ end
 
 -- list all available config files
 local config_files = {
-  'options',
   'commands',
   'globals',
-  'external_plugins',
+  'plugins',
   'keymaps',
   --
   -- 'scripts/cmd_line',
   -- 'scripts/lsp_info',
   'scripts/floating_term',
+  --
+  'options',
 }
 
 -- load all listed config files
