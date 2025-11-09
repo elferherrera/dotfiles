@@ -54,6 +54,7 @@ return {
       { '<leader>r', group = 'Su[r]round' },
       { '<leader>z', group = '[z]Fold' },
       { '<leader>l', group = '[l]ists' },
+      { '<leader>b', group = '[b]harpoon' },
     },
   },
 }

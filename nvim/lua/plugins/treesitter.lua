@@ -3,16 +3,16 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-  dependencies = {
-    { 'nushell/tree-sitter-nu', build = ':TSUpdate nu' },
-  },
+  -- dependencies = {
+  --   { 'nushell/tree-sitter-nu', build = ':TSUpdate nu' },
+  -- },
   config = function()
     require('nvim-treesitter.install').prefer_git = true
 
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
       -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'nu' },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,

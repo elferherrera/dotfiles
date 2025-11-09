@@ -54,7 +54,7 @@ let my_keybindings =  [
     modifier: shift
     keycode: right
     mode: [vi_normal vi_insert] # Note: You can add the same keybinding to all modes by using a list
-    event: { send: HistoryHintWordComplete } 
+    event: { send: HistoryHintWordComplete }
   }
   {
     name: alias_menu
@@ -62,32 +62,32 @@ let my_keybindings =  [
     keycode: char_b
     mode: [vi_normal, vi_insert]
     event: { send: menu name: alias_menu }
-  }  
+  }
   {
     name: reload_config
     modifier: control
     keycode: char_t
     mode: [vi_normal, vi_insert]
-    event: [ 
+    event: [
       { send: ExecuteHostCommand cmd: $"source '($nu.env-path)'; source '($nu.config-path)'" }
     ]
-  }  
+  }
   {
     name: todo_list
     modifier: control
     keycode: char_m
     mode: [vi_normal, vi_insert]
-    event: [ 
+    event: [
       { send: ExecuteHostCommand cmd: "nvim ~/Documents/todo.txt" }
     ]
-  }  
+  }
   {
     name: fzf_menu
     modifier: control
     keycode: char_k
     mode: [vi_normal, vi_insert]
     event: { send: menu name: fzf_menu}
-  }  
+  }
   {
     name: fuzzy_history_fzf
     modifier: control
@@ -96,7 +96,7 @@ let my_keybindings =  [
     event: {
       send: ExecuteHostCommand
       cmd: "commandline edit --replace (
-        history 
+        history
         | where exit_status == 0
         | get command
         | uniq
@@ -114,12 +114,12 @@ let my_keybindings =  [
     keycode: char_j
     mode: [vi_normal, vi_insert]
     event: { send: menu name: fzf_var_menu}
-  }  
+  }
   {
     name: fzf_carapace_menu
     modifier: control
     keycode: char_h
     mode: [vi_normal, vi_insert]
     event: { send: menu name: fzf_carapace_menu }
-  }  
+  }
 ]

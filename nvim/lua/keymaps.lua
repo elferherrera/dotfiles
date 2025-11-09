@@ -30,8 +30,8 @@ local normal_mode_keymaps = {
   ['<leader>za'] = { action = 'za', desc = 'Fold the scope under cursor' },
   ['<leader>zr'] = { action = 'zR', desc = 'Expand all folds in the current buffer' },
 
-  ['<leader>tl'] = { action = '<cmd> tabs<CR>', desc = 'New tab' },
-  ['<leader>td'] = { action = '<cmd> tabclose<CR>', desc = 'New tab' },
+  ['<leader>tl'] = { action = '<cmd> tabs<CR>', desc = 'List tabs' },
+  ['<leader>td'] = { action = '<cmd> tabclose<CR>', desc = 'Close tab' },
   ['<leader>tt'] = { action = '<cmd> tab new<CR>', desc = 'New tab' },
   ['<leader>tn'] = { action = '<cmd> tabn<CR>', desc = 'Next tab' },
   ['<leader>tp'] = { action = '<cmd> tabp<CR>', desc = 'Previous tab' },

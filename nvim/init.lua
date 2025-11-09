@@ -14,13 +14,14 @@ local config_files = {
   'commands',
   'globals',
   'plugins',
-  'keymaps',
   --
   -- 'scripts/cmd_line',
   -- 'scripts/lsp_info',
-  'scripts/floating_term',
+  -- 'scripts/floating_term',
+  -- 'scripts/harpoon',
   --
   'options',
+  'keymaps',
 }
 
 -- load all listed config files

@@ -86,6 +86,7 @@ lazy.setup({
     },
     { import = location .. 'oil' },
     { import = location .. 'lsp' },
+    { import = location .. 'snacks' },
     { import = location .. 'treesitter' },
     { import = location .. 'whichkey' },
     { import = location .. 'gitsigns' },
@@ -99,9 +100,7 @@ lazy.setup({
     { import = location .. 'conform' },
     { import = location .. 'rest' },
     { import = location .. 'markdown' },
-    { import = location .. 'todo-comments' },
-    { import = location .. 'snacks' },
-    --
+    -- { import = location .. 'todo-comments' },
     -- { import = location .. 'cmp' },
     -- { import = location .. 'telescope' },
     -- { import = location .. 'fugitive' },

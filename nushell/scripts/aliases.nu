@@ -3,6 +3,7 @@ alias nv = nvim
 alias con = nvim ($nu.config-path | path dirname)
 alias cov = nvim $"($env.HOME)/.config/nvim"
 alias coz = nvim $"($env.HOME)/.config/zellij/config.kdl"
+alias cog = nvim $"($env.HOME)/.config/ghostty/config"
 alias cok = nvim $"($env.HOME)/Library/Application Support/k9s/config.yaml"
 
 alias cddpr = cd $"($env.HOME)/Documents/projects"
@@ -22,6 +23,8 @@ alias cddr  = cd $"($env.HOME)/Documents/projects/devops/cicd/rhea"
 alias cddrr = cd $"($env.HOME)/Documents/projects/devops/cicd/rhea_repos"
 
 alias cddsl = cd $"($env.HOME)/Documents/projects/devops/cicd/dsl/infra-dsl-transpiler"
+
+alias z = zellij
 
 alias k = kubectl
 alias kcg = kubectl config get-contexts

@@ -1,3 +1,4 @@
+-- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#-examples
 return {
   'folke/snacks.nvim',
   opts = {
@@ -6,6 +7,38 @@ return {
         cycle = true,
         preset = 'dropdown',
       },
+      formatters = {
+        text = {
+          ft = nil, ---@type string? filetype for highlighting
+        },
+        file = {
+          filename_first = true, -- display filename before the file path
+          truncate = 150, -- truncate the file path to (roughly) this length
+          filename_only = false, -- only show the filename
+          icon_width = 2, -- width of the icon (in characters)
+          git_status_hl = true, -- use the git status highlight group for the filename
+        },
+        selected = {
+          show_always = false, -- only show the selected column when there are multiple selections
+          unselected = true, -- use the unselected icon for unselected items
+        },
+        severity = {
+          icons = true, -- show severity icons
+          level = false, -- show severity level
+          ---@type "left"|"right"
+          pos = 'left', -- position of the diagnostics
+        },
+      },
+      -- Harpoon picker
+      -- marks = {
+      --   transform = function(item)
+      --     if item.label and item.label:match '^[A-I]$' and item then
+      --       item.label = '' .. string.byte(item.label) - string.byte 'A' + 1 .. ''
+      --       return item
+      --     end
+      --     return false
+      --   end,
+      -- },
     },
     explorer = {},
     lazygit = {},
@@ -158,7 +191,7 @@ return {
       desc = 'Lazygit',
     },
     {
-      '<leader>gb',
+      '<leader>gw',
       function()
         Snacks.gitbrowse()
       end,
@@ -351,21 +384,21 @@ return {
     },
     -- LSP
     {
-      'cgd',
+      '<leader>cgd',
       function()
         Snacks.picker.lsp_definitions()
       end,
       desc = 'Goto Definition',
     },
     {
-      'cgD',
+      '<leader>cgD',
       function()
         Snacks.picker.lsp_declarations()
       end,
       desc = 'Goto Declaration',
     },
     {
-      'cgr',
+      '<leader>cgr',
       function()
         Snacks.picker.lsp_references()
       end,
@@ -373,14 +406,14 @@ return {
       desc = 'References',
     },
     {
-      'cgI',
+      '<leader>cgI',
       function()
         Snacks.picker.lsp_implementations()
       end,
       desc = 'Goto Implementation',
     },
     {
-      'cgy',
+      '<leader>cgy',
       function()
         Snacks.picker.lsp_type_definitions()
       end,

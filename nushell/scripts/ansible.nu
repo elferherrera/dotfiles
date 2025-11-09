@@ -43,5 +43,5 @@ def --env ansible-interactive [image?: string] {
     "-eDOCKER_HOST=unix:///var/run/docker.sock"
   ]
 
-  docker run --privileged --user root --name myansible --rm --net=host -h ansible -it ...$volumes ...$envs $ansible_image /bin/bash
+  docker run --privileged --user root --name myansible2 --rm --net=host -h ansible -it ...$volumes ...$envs $ansible_image /bin/bash
 }
