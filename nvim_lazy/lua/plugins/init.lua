@@ -67,15 +67,7 @@ lazy.setup({
 
   spec = {
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-    { 'Bilal2453/luvit-meta', lazy = true },
-    -- {
-    --   'folke/tokyonight.nvim',
-    --   priority = 1000,
-    --   init = function()
-    --     vim.cmd.colorscheme 'tokyonight-night'
-    --     vim.cmd.hi 'Comment gui=none'
-    --   end,
-    -- },
+    -- { 'Bilal2453/luvit-meta', lazy = true },
     {
       'catppuccin/nvim',
       priority = 1000,
@@ -85,21 +77,22 @@ lazy.setup({
       end,
     },
     { import = location .. 'oil' },
-    { import = location .. 'lsp' },
-    { import = location .. 'snacks' },
     { import = location .. 'treesitter' },
-    { import = location .. 'whichkey' },
-    { import = location .. 'gitsigns' },
-    { import = location .. 'lazydev' },
+    { import = location .. 'lsp' },
+    { import = location .. 'blink' },
+    { import = location .. 'snacks' },
     { import = location .. 'mini' },
     { import = location .. 'flash' },
-    { import = location .. 'blink' },
+    { import = location .. 'whichkey' },
+    { import = location .. 'gitsigns' },
     { import = location .. 'gitlinker' },
     { import = location .. 'go' },
-    { import = location .. 'autopairs' },
-    { import = location .. 'conform' },
-    { import = location .. 'rest' },
-    { import = location .. 'markdown' },
+    { import = location .. 'lazydev' },
+    { import = location .. 'codediff' },
+    -- { import = location .. 'autopairs' },
+    -- { import = location .. 'conform' },
+    -- { import = location .. 'rest' },
+    -- { import = location .. 'markdown' },
     -- { import = location .. 'todo-comments' },
     -- { import = location .. 'cmp' },
     -- { import = location .. 'telescope' },

@@ -10,18 +10,17 @@ $env.PATH = [
   "/opt/homebrew/sbin"
   $"($env.HOME)/.ghcup/bin"
   $"($env.HOME)/.local/bin"
-  $"($env.HOME)/.cabal/bin"
   $"($env.HOME)/.cargo/bin"
-  $"($env.HOME)/.pyenv/bin"
   $"($env.HOME)/go/bin"
-  $"($env.HOME)/bin/go/bin"
   $"($env.HOME)/bin/google-cloud-sdk/bin"
   $"($env.HOME)/bin/poetry/bin"
   $"($env.HOME)/bin/terraform"
+  $"($env.HOME)/bin/binaries"
   $"($env.HOME)/.kube/plugins/jordanwilson230"
   $"($env.HOME)/Library/Python/3.11/bin"
+  $"($env.HOME)/.local/share/nvim/mason/bin"
+  $"($env.HOME)/.local/share/bob/nvim-bin"
   "/Applications/kitty.app/Contents/MacOS/"
-  "/Applications/Espaso.app/Contents/MacOS/"
   "/opt/homebrew/revolut-workstation-toolbox/bin"
 ]
 
@@ -89,5 +88,7 @@ $env.NU_PLUGIN_DIRS = [
 $env.FZF_DEFAULT_OPTS = "--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 $env.HELIX_RUNTIME = $"($env.HOME)/Documents/repos/helix/runtime"
-$env.EDITOR = "/opt/homebrew/bin/nvim"
+$env.EDITOR = "/Users/fernando.elizalde/.local/share/bob/nvim-bin/nvim"
 $env.SHELL = $"($env.HOME)/.cargo/bin/nu"
+
+$env.TERM = "xterm-256color"

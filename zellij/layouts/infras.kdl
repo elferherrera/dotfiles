@@ -1,0 +1,40 @@
+layout {
+    cwd "/Users/fernando.elizalde/Documents/projects/devops/infra"
+    tab name="puke" focus=true hide_floating_panes=true {
+        pane {
+            cwd "/Users/fernando.elizalde/Documents/mental_puke"
+            command "/opt/homebrew/bin/nvim"
+            start_suspended false
+        }
+    }
+    tab name="k9s" hide_floating_panes=true {
+        pane {
+            command "/opt/homebrew/bin/k9s"
+            start_suspended false
+        }
+    }
+    tab name="ansible" hide_floating_panes=true {
+        pane cwd="ansible"
+    }
+    tab name="infra-1" hide_floating_panes=true {
+        pane cwd="infra-apps"
+    }
+    tab name="infra-2" hide_floating_panes=true {
+        pane cwd="infra-dbs"
+    }
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        children
+    }
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
+

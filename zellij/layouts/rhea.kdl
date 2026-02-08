@@ -1,0 +1,32 @@
+layout {
+    cwd "/Users/fernando.elizalde/Documents/projects/devops/cicd"
+    tab name="running" hide_floating_panes=true {
+        pane command="/Users/fernando.elizalde/bin/poetry/bin/poetry" cwd="rhea" {
+            args "shell"
+            start_suspended false
+        }
+    }
+    tab name="rhea" focus=true hide_floating_panes=true {
+        pane command="/Users/fernando.elizalde/bin/poetry/bin/poetry" cwd="rhea" {
+            args "shell"
+            start_suspended false
+        }
+    }
+    tab name="repos" hide_floating_panes=true {
+        pane split_direction="vertical" {
+            pane cwd="rhea_repos" size="50%"
+            pane cwd="rhea_repos/technology-governance-export" size="50%"
+        }
+    }
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
+

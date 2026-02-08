@@ -2,6 +2,7 @@ source aliases.nu
 source ansible.nu
 source custom_menus.nu
 source keybindings.nu
+source kubernetes.nu
 
 let dark_theme = {
     # color for nushell primitives

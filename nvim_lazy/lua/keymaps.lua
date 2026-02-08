@@ -2,7 +2,7 @@
 local keymap = vim.keymap.set
 
 -- we remap space to leader key so ensure it does nothing
-keymap('', '<Space>', '<Nop>', options)
+keymap('', '<Space>', '<Nop>')
 
 local normal_mode_keymaps = {
   ['x'] = { action = '"_x', desc = 'Delete character without copying' },

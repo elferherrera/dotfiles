@@ -11,8 +11,8 @@ end
 
 -- list all available config files
 local config_files = {
-  'commands',
   'globals',
+  'commands',
   'plugins',
   --
   -- 'scripts/cmd_line',
@@ -29,5 +29,13 @@ for _, config_file in pairs(config_files) do
   load_config(config_file)
 end
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim.diagnostic.config { virtual_text = true }
+-- vim.lsp.enable { 'lua_ls' }
+-- vim.lsp.enable { 'ty' }
+-- vim.lsp.enable { 'ruff_lsp' }
+-- vim.lsp.enable { 'ruff' }
+
+-- vim.pack.add({
+--   "https://github.com/folke/tokyonight.nvim"
+-- })
+-- vim.cmd[[colorscheme tokyonight]]
