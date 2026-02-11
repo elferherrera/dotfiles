@@ -14,6 +14,7 @@ vim.pack.add({
   -- completion
   { src = 'https://github.com/saghen/blink.cmp' },
   { src = 'https://github.com/rafamadriz/friendly-snippets' },
+  { src = 'https://github.com/L3MON4D3/LuaSnip' },
   -- quickfix
   { src = 'https://github.com/kevinhwang91/nvim-bqf' },
   { src = 'https://github.com/junegunn/fzf' },
@@ -24,7 +25,6 @@ vim.pack.add({
 
 vim.cmd("colorscheme catppuccin")
 vim.cmd(":hi statusline guibg=NONE")
-vim.cmd("set completeopt+=noselect")
 
 local plugin_files = {
   'lsp',

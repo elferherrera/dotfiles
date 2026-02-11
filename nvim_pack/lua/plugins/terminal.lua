@@ -45,12 +45,20 @@ vim.keymap.set('n', '<space>gb', function(opts)
   local command = 'tig blame +' .. line .. ' ' .. name
 
   create_float(command, opts)
-end, { desc = "Git blame with tig in float" })
+end, { desc = "Git blame with tig" })
 
 vim.keymap.set('n', '<space>gf', function(opts)
+  local number = vim.api.nvim_get_current_buf()
+  local name = vim.api.nvim_buf_get_name(number)
+  local command = 'tig '  .. name
+
+  create_float(command, opts)
+end, { desc = "Git commit file history with tig" })
+
+vim.keymap.set('n', '<space>gl', function(opts)
   local number = vim.api.nvim_get_current_buf()
   local name = vim.api.nvim_buf_get_name(number)
   local command = 'tig log '  .. name
 
   create_float(command, opts)
-end, { desc = "Git file history" })
+end, { desc = "Git log file history with tig" })

@@ -27,7 +27,7 @@ keybinds clear-defaults=true {
         bind "esc" { SwitchToMode "locked"; }
     }
     locked {
-        bind "Ctrl space" { SwitchToMode "normal"; }
+        bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -375,7 +375,7 @@ copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-scrollback_editor "/opt/homebrew/bin/nvim"
+scrollback_editor "/Users/fernando.elizalde/.local/share/bob/nvim-bin/nvim"
  
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`

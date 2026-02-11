@@ -16,3 +16,4 @@ require 'nvim-treesitter'.setup {
 -- lua require('nvim-treesitter').install { 'go' }
 -- lua require('nvim-treesitter').install { 'rust' }
 -- lua require('nvim-treesitter').install { 'yaml' }
+-- lua require('nvim-treesitter').install { 'terraform' }

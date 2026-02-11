@@ -34,7 +34,7 @@ require('mini.pick').setup(
 
       paste             = '<C-r>',
 
-      refine            = '<C-,>',
+      refine            = '<C-Space>',
       refine_marked     = '<M-Space>',
 
       scroll_down       = '<C-f>',
@@ -89,4 +89,5 @@ require('mini.pick').setup(
 vim.keymap.set('n', '<leader>sf', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>sg', ':Pick grep_live<CR>')
 vim.keymap.set('n', '<leader>sh', ':Pick help<CR>')
+vim.keymap.set('n', '<leader>sr', ':Pick resume<CR>')
 vim.keymap.set('n', '<leader>,', ':Pick buffers<CR>')

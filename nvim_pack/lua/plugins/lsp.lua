@@ -6,6 +6,8 @@ vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Code format' })
 vim.keymap.set('n', 'grd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'grs', vim.lsp.buf.document_symbol, { desc = 'List of symbols in document' })
 vim.keymap.set('n', 'grS', vim.lsp.buf.workspace_symbol , { desc = 'List of symbols in workspace' })
+vim.keymap.set('n', 'gre', vim.diagnostic.setloclist, { desc = 'List of buffer errors from diagnostic' })
+vim.keymap.set('n', 'grE', vim.diagnostic.setqflist, { desc = 'List of workspace errors from diagnostic' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
