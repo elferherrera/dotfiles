@@ -9,11 +9,12 @@ vim.keymap.set('n', 'grS', vim.lsp.buf.workspace_symbol , { desc = 'List of symb
 vim.keymap.set('n', 'gre', vim.diagnostic.setloclist, { desc = 'List of buffer errors from diagnostic' })
 vim.keymap.set('n', 'grE', vim.diagnostic.setqflist, { desc = 'List of workspace errors from diagnostic' })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client ~= nil and client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
+-- Use this only if you don't want to use blink for auto completion
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client ~= nil and client:supports_method('textDocument/completion') then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
